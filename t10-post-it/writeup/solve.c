@@ -20,7 +20,7 @@ unsigned long long fib(unsigned int i) {
 }
 
 uint key[] = {
-    50928, 40749, 9565, 46099, 41782, 13663, 27947, 61296, 29225, 13283,
+    1, 4, 2, 7, 15, 17, 31, 125, 255, 13283,
     37430, 50731, 31795, 3576, 30323, 50276, 44420, 45033, 6161, 37434,
     43354, 37137, 26063, 55410, 17757, 5197, 10497, 65305, 36190, 9589,
     17139, 63125, 26182, 22881, 62993, 19541, 34071, 8824, 43362, 15255,
@@ -29,14 +29,13 @@ uint key[] = {
     23422, 33922, 41248, 63769, 50560, 12846, 27394, 43220
 };
 char const flag[] = {
-    (char)184, (char)36, (char)57, (char)71, (char)72, (char)223, (char)44, (char)241, (char)143, (char)224, (char)243, (char)151, (char)112, (char)203, (char)149, (char)206, (char)120, (char)235, (char)227, (char)175, (char)225, (char)248, (char)130, (char)8, (char)234, (char)103, (char)34, (char)74, (char)44, (char)189, (char)182, (char)63, (char)46, (char)49, (char)78, (char)56, (char)194, (char)144, (char)135, (char)60, (char)101, (char)86, (char)228, (char)144, (char)128, (char)220, (char)124, (char)43, (char)92, (char)4, (char)95, (char)240, (char)145, (char)151, (char)26, (char)147, (char)81, (char)169, (char)17, (char)26, (char)219, (char)159, (char)36, (char)174, (char)8, (char)186, (char)202, (char)44
+    (char)105, (char)104, (char)98, (char)104, (char)16, (char)73, (char)239, (char)85, (char)202, (char)124, (char)177, (char)88, (char)36, (char)67, (char)240, (char)128, (char)47, (char)0, (char)194, (char)57, (char)4, (char)226, (char)221, (char)165, (char)37, (char)163, (char)76, (char)148, (char)156, (char)17, (char)161, (char)61, (char)232, (char)64, (char)43, (char)137, (char)250, (char)178, (char)192, (char)88, (char)202, (char)165, (char)63, (char)79, (char)177, (char)61, (char)168, (char)213, (char)90, (char)217, (char)158, (char)251, (char)246, (char)169, (char)2, (char)90, (char)236, (char)114, (char)2, (char)210, (char)187, (char)45, (char)41, (char)176, (char)19, (char)183, (char)3, (char)15
 };
 
 int main() {
     for (int i = 0; i < 68; i++) {
         unsigned long long val = fib(key[i]);
-        srand(val % 0xFFFFFFFF);
-        int key = rand() % 256;
+        int key = val % 256;
         cout << char(int(flag[i]) ^ key);
     }
     cout << endl;
